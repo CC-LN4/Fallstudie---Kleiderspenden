@@ -32,16 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // PLZ nur prüfen, wenn Abholung gewählt wurde
-        if (uebergabe.value === "abholung") {
-            const plz = plzInput.value.trim();
+       if (uebergabe.value === "abholung") {
+    const plz = plzInput.value.trim();
 
-            if (!/^\d{5}$/.test(plz)) {
-                alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
-                plzInput.style.border = "2px solid red";
-                plzInput.focus();
-                return false;
-            }
-        }
+    if (!/^\d{5}$/.test(plz)) {
+        alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
+        plzInput.style.border = "2px solid red";
+        plzInput.focus();
+        return false;
+    }
+
+    // ✔ Wenn PLZ gültig → Rahmen zurücksetzen
+    plzInput.style.border = "";
+}
 
         alert("Formular erfolgreich validiert!");
         return true;
