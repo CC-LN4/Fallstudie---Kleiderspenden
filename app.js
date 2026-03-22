@@ -1,6 +1,3 @@
-form.addEventListener("submit", function(event) {
-    console.log("SUBMIT EVENT FEUERT");
-});
 document.addEventListener("DOMContentLoaded", function() {
     console.log("JS läuft");
 
@@ -15,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // <-- verhindert IMMER das Absenden
+    // **HARTER STOPPER — verhindert jedes Absenden**
+    form.onsubmit = function(e) {
+        e.preventDefault(); // <-- blockiert IMMER
 
         const plz = plzInput.value.trim();
 
@@ -24,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
             plzInput.style.border = "2px solid red";
             plzInput.focus();
-            return;
+            return false;
         }
 
-        // Wenn PLZ gültig → Formular darf weiter
         alert("Formular erfolgreich validiert!");
-        form.submit(); // <-- manuelles Absenden
-    });
+        return true;
+    };
 });
+
