@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Script geladen");
+    console.log("JS läuft");
 
     const abholAdresse = document.getElementById("abholAdresse");
     const radios = document.getElementsByName("uebergabe");
@@ -14,4 +14,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
