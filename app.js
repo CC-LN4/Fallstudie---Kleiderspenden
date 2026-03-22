@@ -1,3 +1,6 @@
+form.addEventListener("submit", function(event) {
+    console.log("SUBMIT EVENT FEUERT");
+});
 document.addEventListener("DOMContentLoaded", function() {
     console.log("JS läuft");
 
