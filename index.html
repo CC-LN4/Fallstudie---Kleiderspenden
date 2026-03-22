@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kleiderspenden-Portal</title>
 
-    <!-- CSS einbinden -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <img src="https://via.placeholder.com/80" alt="Logo">
         <h1>Kleiderspenden-Portal</h1>
@@ -21,14 +19,11 @@
         </nav>
     </header>
 
-    <!-- HAUPTBEREICH -->
     <main>
         <h2>Kleiderspende registrieren</h2>
-        <p>Hier entsteht dein Formular.</p>
 
         <form id="spendenForm">
 
-            <!-- Kleidung -->
             <label for="kleidung">Art der Kleidung:</label>
             <select id="kleidung" name="kleidung">
                 <option value="tshirt">T-Shirts</option>
@@ -38,7 +33,6 @@
                 <option value="schuhe">Schuhe</option>
             </select>
 
-            <!-- Krisengebiet -->
             <label for="krisengebiet">Krisengebiet:</label>
             <select id="krisengebiet" name="krisengebiet">
                 <option value="libanon">Libanon</option>
@@ -47,8 +41,8 @@
                 <option value="haiti">Haiti</option>
             </select>
 
-            <!-- Übergabeart -->
             <p>Übergabeart:</p>
+
             <label>
                 <input type="radio" name="uebergabe" value="geschaeftsstelle">
                 Übergabe an der Geschäftsstelle
@@ -59,7 +53,6 @@
                 Abholung
             </label>
 
-            <!-- Abholadresse -->
             <div id="abholAdresse">
                 <label for="strasse">Straße und Hausnummer</label>
                 <input type="text" id="strasse" name="strasse">
@@ -71,18 +64,16 @@
                 <input type="text" id="ort" name="ort">
             </div>
 
-            <!-- Absenden -->
             <button type="submit">Spende registrieren</button>
 
         </form>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>© Gemeinnütziger Verein – Impressum | Datenschutz</p>
     </footer>
 
-    <!-- JavaScript einbinden -->
-    <script src="scriptsapp.js"></script>
+    <!-- WICHTIG: neuer Dateiname, Kaspersky-sicher -->
+    <script src="app.js" defer></script>
 </body>
 </html>
