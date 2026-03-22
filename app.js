@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const abholAdresse = document.getElementById("abholAdresse");
     const radios = document.getElementsByName("uebergabe");
     const plzInput = document.getElementById("plz");
-    const form = document.querySelector("form");
+    const form = document.getElementById("spendenForm");
+
 
     // Umschalten der Abholadresse
     radios.forEach(radio => {
