@@ -4,43 +4,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const abholAdresse = document.getElementById("abholAdresse");
     const radios = document.getElementsByName("uebergabe");
     const plzInput = document.getElementById("plz");
-    const form = document.querySelector("form"); // <-- funktioniert IMMER
+    const form = document.querySelector("form");
 
-    // Umschalten der Abholadresse
     radios.forEach(radio => {
         radio.addEventListener("change", function() {
-            if (this.value === "abholung") {
-                abholAdresse.style.display = "block";
-            } else {
-                abholAdresse.style.display = "none";
-            }
+            abholAdresse.style.display = this.value === "abholung" ? "block" : "none";
         });
     });
 
-    // PLZ Validierung beim Tippen
-    plzInput.addEventListener("input", function() {
-        const plz = plzInput.value.trim();
-
-        if (!/^\d*$/.test(plz)) {
-            plzInput.style.border = "2px solid red";
-            return;
-        }
-
-        if (plz.length === 5) {
-            plzInput.style.border = "2px solid green";
-        } else {
-            plzInput.style.border = "2px solid orange";
-        }
-    });
-
-    // Validierung beim Absenden
     form.addEventListener("submit", function(event) {
+        event.preventDefault(); // <-- verhindert IMMER das Absenden
+
         const plz = plzInput.value.trim();
 
         if (!/^\d{5}$/.test(plz)) {
             alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
+            plzInput.style.border = "2px solid red";
             plzInput.focus();
-            event.preventDefault();
+            return;
         }
+
+        // Wenn PLZ gültig → Formular darf weiter
+        alert("Formular erfolgreich validiert!");
+        form.submit(); // <-- manuelles Absenden
     });
 });
