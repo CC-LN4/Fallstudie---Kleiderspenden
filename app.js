@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const plz = plzInput.value.trim();
 
         if (!/^\d{5}$/.test(plz)) {
-            alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
+            alert("PLZ ungültig! Wert war: " + plz);
             plzInput.style.border = "2px solid red";
             plzInput.focus();
             return false;
