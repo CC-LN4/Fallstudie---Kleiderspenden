@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const radios = document.getElementsByName("uebergabe");
     const plzInput = document.getElementById("plz");
     const form = document.getElementById("spendenForm");
+    console.log("Gefundenes Formular:", form);
+
 
 
     // Umschalten der Abholadresse
