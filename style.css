@@ -28,7 +28,8 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
-/* Abholadresse standardmäßig ausblenden */
+
+/* Abholadresse sicher ausblenden */
 #abholAdresse {
-    display: none;
+    display: none !important;
 }
