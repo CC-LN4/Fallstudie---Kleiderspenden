@@ -1,4 +1,5 @@
 console.log("Script geladen");
+
 // Elemente holen
 const abholAdresse = document.getElementById("abholAdresse");
 const radios = document.getElementsByName("uebergabe");
@@ -13,3 +14,4 @@ radios.forEach(radio => {
         }
     });
 });
+
