@@ -25,53 +25,58 @@
     <main>
         <h2>Kleiderspende registrieren</h2>
         <p>Hier entsteht dein Formular.</p>
-<form id="spendenForm">
- <!-- Kleidung -->
-    <label for="kleidung">Art der Kleidung:</label>
-    <select id="kleidung" name="kleidung">
-    <option value="tshirt">TShirt</option>
-    <option value="pullover-strickjacken">Pullover/Strickjacken</option>
-    <option value="hosen">Hosen</option>
-    <option value="jacken-maentel">Jacken/Maentel</option>
-    <option value="schuhe">Schuhe</option>
-    </select>
 
-    <!-- Krisengebiet -->
-    <label for="krisengebiet">Krisengebiet:</label>
-    <select id="krisengebiet" name="krisengebiet">
-     <option value="libanon">Libanon</option>
-        <option value="somalia">Somalia</option>
-        <option value="jemen">Jemen</option>
-        <option value="haiti">Haiti</option>
-    </select>
-    <!-- Übergabeart -->
-    <p>Übergabeart:</p>
-    <label>
-        <input type="radio" name="uebergabe" value="geschaeftsstelle">
-        Übergabe an der Geschäftsstelle
-    </label>
+        <form id="spendenForm">
 
-    <label>
-        <input type="radio" name="uebergabe" value="abholung">
-        Abholung
-    </label>
+            <!-- Kleidung -->
+            <label for="kleidung">Art der Kleidung:</label>
+            <select id="kleidung" name="kleidung">
+                <option value="tshirt">T-Shirts</option>
+                <option value="pullover-strickjacken">Pullover / Strickjacken</option>
+                <option value="hosen">Hosen</option>
+                <option value="jacken-maentel">Jacken / Maentel</option>
+                <option value="schuhe">Schuhe</option>
+            </select>
 
-    <!-- Abholadresse -->
-  <div id="abholAdresse">
-    <label for="strasse">Straße und Hausnummer</label>
-    <input type="text" id="strasse" name="strasse">
+            <!-- Krisengebiet -->
+            <label for="krisengebiet">Krisengebiet:</label>
+            <select id="krisengebiet" name="krisengebiet">
+                <option value="libanon">Libanon</option>
+                <option value="somalia">Somalia</option>
+                <option value="jemen">Jemen</option>
+                <option value="haiti">Haiti</option>
+            </select>
 
-<label for="plz">Postleitzahl</label>
-<input type="text" id="plz" name="plz">
+            <!-- Übergabeart -->
+            <p>Übergabeart:</p>
+            <label>
+                <input type="radio" name="uebergabe" value="geschaeftsstelle">
+                Übergabe an der Geschäftsstelle
+            </label>
 
-    <label for="ort">Ort</label>
-    <input type="text" id="ort" name="ort">
-    </div>
+            <label>
+                <input type="radio" name="uebergabe" value="abholung">
+                Abholung
+            </label>
 
-    <!-- Absenden -->
-    <button type="submit">Spende registrieren</button>
- </form>
-      </main>
+            <!-- Abholadresse -->
+            <div id="abholAdresse">
+                <label for="strasse">Straße und Hausnummer</label>
+                <input type="text" id="strasse" name="strasse">
+
+                <label for="plz">Postleitzahl</label>
+                <input type="text" id="plz" name="plz">
+
+                <label for="ort">Ort</label>
+                <input type="text" id="ort" name="ort">
+            </div>
+
+            <!-- Absenden -->
+            <button type="submit">Spende registrieren</button>
+
+        </form>
+    </main>
+
     <!-- FOOTER -->
     <footer>
         <p>© Gemeinnütziger Verein – Impressum | Datenschutz</p>
