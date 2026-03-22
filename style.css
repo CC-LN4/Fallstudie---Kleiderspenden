@@ -1,4 +1,3 @@
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -30,8 +29,7 @@ footer {
     margin-top: 40px;
 }
 
-/* Abholadresse sicher ausblenden */
+/* Standardmäßig ausblenden – OHNE !important */
 #abholAdresse {
-    display: none !important;
-  
+    display: none;
 }
