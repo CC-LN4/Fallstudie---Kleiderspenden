@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Abholadresse ein-/ausblenden
     radios.forEach(radio => {
         radio.addEventListener("change", function () {
-            abholAdresse.style.display = this.value === "abholung" ? "block" : "none";
+            if (this.value === "abholung") {
+                abholAdresse.style.display = "block";
+            } else {
+                abholAdresse.style.display = "none";
+            }
         });
     });
 
