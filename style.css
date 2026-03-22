@@ -35,8 +35,5 @@ footer {
 /* Abholadresse sicher ausblenden */
 #abholAdresse {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+  
 }
