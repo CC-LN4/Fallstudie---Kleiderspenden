@@ -25,14 +25,42 @@
     <main>
         <h2>Kleiderspende registrieren</h2>
         <p>Hier entsteht dein Formular.</p>
-<form id="spendenForm"
- <label> + <select>
- <label> + <select>
- <label> +<input type="radio">
- <input type="radio">
- <div id="abholAdresse">
-    <!-- Straße, PLZ, Ort -->
-</div>
+<form id="spendenForm">
+ <!-- Kleidung -->
+    <label for="kleidung">Art der Kleidung:</label>
+    <select id="kleidung" name="kleidung">
+        <!-- hier kommen deine Optionen rein -->
+    </select>
+
+    <!-- Krisengebiet -->
+    <label for="krisengebiet">Krisengebiet:</label>
+    <select id="krisengebiet" name="krisengebiet">
+        <!-- hier kommen deine Optionen rein -->
+    </select>
+
+    <!-- Übergabeart -->
+    <p>Übergabeart:</p>
+    <label>
+        <input type="radio" name="uebergabe" value="geschaeftsstelle">
+        Übergabe an der Geschäftsstelle
+    </label>
+
+    <label>
+        <input type="radio" name="uebergabe" value="abholung">
+        Abholung
+    </label>
+
+    <!-- Abholadresse -->
+    <div id="abholAdresse">
+        <!-- Straße -->
+        <!-- PLZ -->
+        <!-- Ort -->
+    </div>
+
+    <!-- Absenden -->
+    <button type="submit">Spende registrieren</button>
+
+</form>
  </form>
       </main>
     <!-- FOOTER -->
