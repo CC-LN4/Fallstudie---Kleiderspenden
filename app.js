@@ -6,15 +6,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const plzInput = document.getElementById("plz");
     const form = document.querySelector("form");
 
+    // Umschalten der Abholadresse
     radios.forEach(radio => {
         radio.addEventListener("change", function() {
             abholAdresse.style.display = this.value === "abholung" ? "block" : "none";
         });
     });
 
-    // **HARTER STOPPER — verhindert jedes Absenden**
+    // HARTE VALIDIERUNG – fängt ALLES ab
     form.onsubmit = function(e) {
-        e.preventDefault(); // <-- blockiert IMMER
+        console.log("SUBMIT LISTENER WIRD AUSGEFÜHRT");
+        e.preventDefault(); // <-- blockiert jedes Absenden
 
         const plz = plzInput.value.trim();
 
@@ -29,4 +31,3 @@ document.addEventListener("DOMContentLoaded", function() {
         return true;
     };
 });
-
