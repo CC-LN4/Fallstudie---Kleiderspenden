@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const abholAdresse = document.getElementById("abholAdresse");
     const radios = document.getElementsByName("uebergabe");
     const plzInput = document.getElementById("plz");
-    const form = document.getElementById("spendenForm");
+    const form = document.querySelector("form"); // <-- funktioniert IMMER
 
     // Umschalten der Abholadresse
     radios.forEach(radio => {
@@ -21,13 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
     plzInput.addEventListener("input", function() {
         const plz = plzInput.value.trim();
 
-        // Nur Ziffern erlauben
         if (!/^\d*$/.test(plz)) {
             plzInput.style.border = "2px solid red";
             return;
         }
 
-        // 5-stellig?
         if (plz.length === 5) {
             plzInput.style.border = "2px solid green";
         } else {
