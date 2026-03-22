@@ -1,36 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     console.log("JS läuft");
 
     const abholAdresse = document.getElementById("abholAdresse");
     const radios = document.getElementsByName("uebergabe");
     const plzInput = document.getElementById("plz");
     const form = document.getElementById("spendenForm");
+
     console.log("Gefundenes Formular:", form);
 
-
-
-    // Umschalten der Abholadresse
+    // Abholadresse ein-/ausblenden
     radios.forEach(radio => {
-        radio.addEventListener("change", function() {
+        radio.addEventListener("change", function () {
             abholAdresse.style.display = this.value === "abholung" ? "block" : "none";
         });
     });
 
-    // HARTE VALIDIERUNG – fängt ALLES ab
-    form.onsubmit = function(e) {
+    // VALIDIERUNG
+    form.addEventListener("submit", function (e) {
         console.log("SUBMIT LISTENER WIRD AUSGEFÜHRT");
-        e.preventDefault(); // <-- blockiert jedes Absenden
+        e.preventDefault();
 
-        const plz = plzInput.value.trim();
-
-        if (!/^\d{5}$/.test(plz)) {
-            alert("PLZ ungültig! Wert war: " + plz);
-            plzInput.style.border = "2px solid red";
-            plzInput.focus();
+        // Übergabeart prüfen
+        const uebergabe = document.querySelector('input[name="uebergabe"]:checked');
+        if (!uebergabe) {
+            alert("Bitte eine Übergabeart auswählen.");
             return false;
+        }
+
+        // PLZ nur prüfen, wenn Abholung gewählt wurde
+        if (uebergabe.value === "abholung") {
+            const plz = plzInput.value.trim();
+
+            if (!/^\d{5}$/.test(plz)) {
+                alert("Bitte eine gültige 5-stellige Postleitzahl eingeben.");
+                plzInput.style.border = "2px solid red";
+                plzInput.focus();
+                return false;
+            }
         }
 
         alert("Formular erfolgreich validiert!");
         return true;
-    };
+    });
 });
